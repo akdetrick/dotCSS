@@ -143,6 +143,8 @@ theme: merriweather, 7
 # Code reflecting communication structure
 team A doesn't know that team B already did a thing like this
 
+**communication moves up and down this tree, but not across**
+
 **Find SDS pitch presentation!**
 
 ---
@@ -173,13 +175,13 @@ design inconsistency
 
 ## Breaking the cycle
 
-* start thinking about the developer experience
+* think about the developer experience
 * focus on the decision point at which developers need to add more CSS
 * reduce design fragmentation
 
 ---
 
-## Utility classes
+## Utility classes to the rescue
 
 (flush modifiers)
 "if these classes already exist and are easier to remember, you don't have to write extra CSS"
@@ -191,7 +193,6 @@ design inconsistency
 * small, sharp tools
 * quickly assemble layouts in markup instead of writing styles from scratch
 * apply classes to markup instead of selectors to CSS
-* allows developers to write less CSS
 * "style by memory"
 
 ---
@@ -200,12 +201,12 @@ design inconsistency
 
 ---
 
-Core concepts of Expressive CSS
+Core concepts of _Expressive CSS_
 
 * AKA "functional CSS"
 * Classes are for styling. Tags are for semantics.
 * Class names should be understandable at a glance
-* Portability / Referential transparency
+* Portability / referential transparency
 * _Spend less time writing CSS_
 
 ---
@@ -222,7 +223,7 @@ Core concepts of Expressive CSS
 
 ---
 
-## Expressive CSS presentational classes
+## _Expressive CSS_ presentational classes
 
 ```html
 <div class="pos-bottom pos-left text-white">

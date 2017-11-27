@@ -1,6 +1,6 @@
 autoscale: false
 build-lists: true
-theme: merriweather, 7
+theme: simple, 2
 
 ![](hammer.jpeg)
 
@@ -61,11 +61,6 @@ theme: merriweather, 7
 
 ---
 
-# CSS debt cycle
-"this CSS is too complicated" -> make it more complicated -> GOTO 0
-
----
-
 * Most of us have seen CSS like this
 * Many of us have _written_ CSS like this
 * _I have written CSS like this_
@@ -93,7 +88,8 @@ theme: merriweather, 7
 
 ---
 
-> CSS is especially difficult to read
+> CSS is especially difficult to
+> reason about
 -- Me, right now on stage
 
 ---
@@ -114,7 +110,7 @@ theme: merriweather, 7
 
 ![](css.png)
 
-# **it's hard to build a complete mental model of the cascade when reading CSS**
+# **it's impossible to build a complete mental model of the cascade when reading CSS**
 
 ---
 
@@ -126,7 +122,7 @@ theme: merriweather, 7
 
 ## [fit] technical problems
 ## [fit] !==
-## [fit] human problems
+## [fit] people problems
 
 ^We often misidentify a "people problem" as a technical problem, and not all technical problems are best solved with technical solutions
 ^If you ignore people problems, you can't fix them
@@ -147,18 +143,23 @@ team A doesn't know that team B already did a thing like this
 
 ---
 
-# CSS debt cycle
+# "The CSS snowball effect"
 we have 12 components that do the same thing and I can write a better one
 
 ---
 
-# CSS debt cycle
+# "The CSS snowball effect"
 deadline, just override to get it done
 
 ---
 
-# CSS debt cycle
+# "The CSS snowball effect"
 design inconsistency
+
+---
+
+# "The CSS snowball effect"
+"this CSS is too complicated" -> make it more complicated -> GOTO 0
 
 ---
 
@@ -174,8 +175,7 @@ design inconsistency
 ## Breaking the cycle
 
 * start thinking about the developer experience
-* focus on the decision point at which developers need to add more CSS
-* reduce design fragmentation
+* think about the decision point at which developers need to add more CSS
 
 ---
 
@@ -186,13 +186,11 @@ design inconsistency
 
 ---
 
-# Benefits of utility classes
+# CLASSES part 2
 
-* small, sharp tools
-* quickly assemble layouts in markup instead of writing styles from scratch
-* apply classes to markup instead of selectors to CSS
-* allows developers to write less CSS
 * "style by memory"
+* apply classes to markup instead of selectors to CSS
+* make it less necessary to write CSS
 
 ---
 
@@ -266,52 +264,49 @@ design inconsistency
 
 ---
 
-# Who needs to read `class` attributes?
+# Classes for styling; tags for semantics
+
+## Who will be reading your class names?
 
 * __Users?__ Other attributes (`rel`, `role`, `title`, `alt`) are more useful than `class`
-* __Machines?__ Tag choices and microdata (`itemscope`/`itemprop`) are more descriptive than `class`
+* __Machines?__ Tag choices and metadata (`itemscope`/`itemprop`) are more descriptive than `class`
 * __Developers!__ The `class` attribute is most useful to developers building features
 
 ---
 
 # Level of abstraction
 
-Too specific:
-
 ```css
-.border--top--black--4px { ... }
-.padding--left--21px { ... }
+.border--top--black-xl { ... }
+.padding--left-21px { ... }
 ```
-<br />
 
-Just right:
-
-```css
-.text--display1 { ... }
-.media--xl { ... }
-```
+^You can easily imagine this getting out of hand
 
 ---
 
-![inline](typeColor.png)
+# show design-driven abstractions (text specimen)
 
 ---
 
-# Foster a good relationship between engineering and design
-
-![inline](talk.png)
+# [fit] Foster a better relationship between engineering and design
 
 
+^Maybe mention the previous "bridging the gap" presentation at dotCSS
 ^You can't create useful abstractions without cooperation from design
 
+
 ---
 
-# Design & Engineering
+# Design relationship part 1
 
 * Speak the same language
-* Create a sense of shared ownership
+* create a sense of shared ownership
+* debate, then **decide** together
 
 ---
+
+# "Speak the same language"
 
 (show style-dictionary)
 
@@ -322,6 +317,16 @@ Just right:
 
 # [fit] Static documentation is
 # [fit] a lie waiting to happen
+
+---
+
+# "debate, then **decide**
+
+(show storybook)
+
+1. With documentation generated from source, you can declare "_this_ is our standard button component"
+2. When design inconsistency occurs, use it as an opportunity to spark a debate
+3. record the decisions in the standard component
 
 ---
 
@@ -336,22 +341,33 @@ Just right:
 
 ---
 
+# "The CSS snowball effect"
+design inconsistency
+
+^This is a major contributor to CSS technical debt...
+
+---
+
 # [fit] CSS is better when
 # [fit] you write less of it
 
 ---
 
-![](meetup.png)
+![left](meetup.png)
 
 _@akdetrick_
 
 
 <br />
-**Relevant Meetup projects:**
-[github.com/meetup/swarm-sasstools](https://github.com/meetup/swarm-sasstools)
-[github.com/meetup/swarm-icons](https://github.com/meetup/swarm-icons)
-[github.com/meetup/swarm-constants](https://github.com/meetup/swarm-constants)
+`style-dictionary`:
+[github.com/amzn/style-dictionary](https://github.com/amzn/style-dictionary)
+
 
 <br />
-**Meetup tech blog:**
+Relevant Meetup projects:
+[github.com/meetup/swarm-sasstools](https://github.com/meetup/swarm-sasstools)
+[github.com/meetup/swarm-icons](https://github.com/meetup/swarm-icons)
+
+<br />
+Meetup tech blog:
 [medium.com/making-meetup](https://medium.com/making-meetup)

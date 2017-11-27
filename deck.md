@@ -200,6 +200,16 @@ design inconsistency
 
 ---
 
+Core concepts of Expressive CSS
+
+* AKA "functional CSS"
+* Classes are for styling. Tags are for semantics.
+* Class names should be understandable at a glance
+* Portability / Referential transparency
+* _Spend less time writing CSS_
+
+---
+
 ## Content-derived class names
 
 ```html
@@ -212,7 +222,7 @@ design inconsistency
 
 ---
 
-## "Expressive CSS" presentational classes
+## Expressive CSS presentational classes
 
 ```html
 <div class="pos-bottom pos-left text-white">
@@ -313,10 +323,69 @@ Just right:
 
 ---
 
-(show style-dictionary)
+![inline](styledict.png)
 
-1. show screenshot of colors (name all the things to speak the same lang)
-2. show how the code is for use in product AND documentation
+---
+
+```js
+{
+	"color": {
+		"text": {
+			"primary": { "value": [46, 62, 72, 1] },
+			"secondary": { "value": [46, 62, 72, 0.60] },
+			"hint": { "value": [46, 62, 72, 0.35] },
+			"primaryInverted": { "value": [255, 255, 255, 1] },
+			"secondaryInverted": { "value": [255, 255, 255, 0.70] },
+			"hintInverted": { "value": [255, 255, 255, 0.35] }
+		}
+	}
+}
+```
+
+---
+
+```js
+	"scss": {
+		"transforms": [
+			"attribute/cti",
+			"name/cti/prefixC",
+			"color/optimizedRGBA"
+		],
+		"buildPath": "./dist/",
+		"files": [
+			{
+				"destination": "scss/_colors.scss",
+				"format": "scss/variables"
+			}
+		]
+	}
+```
+
+---
+
+```scss
+$C_textPrimary: rgb(46,62,72);
+$C_textSecondary: rgba(46,62,72,0.6);
+$C_textHint: rgba(46,62,72,0.35);
+$C_textPrimaryInverted: rgb(255,255,255);
+$C_textSecondaryInverted: rgba(255,255,255,0.7);
+$C_textHintInverted: rgba(255,255,255,0.35);
+```
+
+---
+
+```js
+exports.C_TEXT_PRIMARY = 'rgb(46,62,72)';
+exports.C_TEXT_SECONDARY = 'rgba(46,62,72,0.6)';
+exports.C_TEXT_HINT = 'rgba(46,62,72,0.35)';
+exports.C_TEXT_PRIMARYINVERTED = 'rgb(255,255,255)';
+exports.C_TEXT_SECONDARYINVERTED = 'rgba(255,255,255,0.7)';
+exports.C_TEXT_HINTINVERTED = 'rgba(255,255,255,0.35)';
+```
+
+---
+
+![inline](colorsdoc.png)
 
 ---
 
@@ -325,14 +394,11 @@ Just right:
 
 ---
 
-# "shared sense of ownership"
+# To write less CSS...
 
-(show icons)
-
-1. introduce sketch-cli (you can export things from sketch files with a script)
-2. show our artboards
-3. show how this is used to generate distributions
-4. designers control the point of truth and engineers use it
+* recognize why humans are bad at maintaining CSS
+* style with utility classes
+* root your abstractions in what best fosters communication
 
 ---
 
@@ -343,15 +409,16 @@ Just right:
 
 ![](meetup.png)
 
-_@akdetrick_
-
+**Expressive CSS**
+[johnpolacek.com/content-display-patterns/](http://johnpolacek.com/content-display-patterns/)
 
 <br />
 **Relevant Meetup projects:**
 [github.com/meetup/swarm-sasstools](https://github.com/meetup/swarm-sasstools)
-[github.com/meetup/swarm-icons](https://github.com/meetup/swarm-icons)
 [github.com/meetup/swarm-constants](https://github.com/meetup/swarm-constants)
 
 <br />
 **Meetup tech blog:**
 [medium.com/making-meetup](https://medium.com/making-meetup)
+
+_**@akdetrick**_

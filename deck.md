@@ -61,8 +61,6 @@ theme: merriweather, 7
 
 ---
 
-CSS debt cycle
-
 ![inline](debtcycle.png)
 
 ---
@@ -150,19 +148,13 @@ team A doesn't know that team B already did a thing like this
 
 ---
 
-Duplication begets more debt
-
 ![inline](debtcycle_components.png)
 
 ---
 
-Deadlines lead to debt
-
 ![inline](debtcycle_deadline.png)
 
 ---
-
-Design inconsistency leads to debt
 
 ![inline](debtcycle_design.png)
 
@@ -205,13 +197,6 @@ Design inconsistency leads to debt
 
 ---
 
-`.align--left .atLarge_align--center`
-
-
-![inline](classes_media.png)
-
----
-
 # [fit] `.at[Breakpoint]_[property]--[variant]`
 
 ---
@@ -245,32 +230,8 @@ Breakpoints        | Property       | Variants
 
 * AKA "functional CSS"
 * Class names should be understandable at a glance
-* Portability / referential transparency
+* Portability
 * _Spend less time writing CSS_
-
----
-
-## Content-derived class names
-
-```html
-<div class="event">
-	<h1 class="event__title">Star Wars: The ...
-	<p class="event__date">Dec 20, 2015</p>
-	<p class="event__location">Ritz East, Phil...
-</div>
-```
-
----
-
-## _Expressive CSS_ presentational classes
-
-```html
-<div class="pos-bottom pos-left text-white">
-	<h1 class="text-reg pad-2-top">Star Wars: The ...
-	<p class="bold">Dec 20, 2015</p>
-	<p class="text-small">Ritz East, Phil...
-</div>
-```
 
 ---
 
@@ -316,7 +277,7 @@ Breakpoints        | Property       | Variants
 
 ---
 
-# Who needs to read `class` attributes?
+## Who needs to read `class` attributes?
 
 * __Users?__ Other attributes (`rel`, `role`, `title`, `alt`) are more useful than `class`
 * __Machines?__ Tag choices and microdata (`itemscope`/`itemprop`) are more descriptive than `class`

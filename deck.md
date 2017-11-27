@@ -61,8 +61,9 @@ theme: merriweather, 7
 
 ---
 
-# CSS debt cycle
-"this CSS is too complicated" -> make it more complicated -> GOTO 0
+CSS debt cycle
+
+![inline](debtcycle.png)
 
 ---
 
@@ -149,18 +150,21 @@ team A doesn't know that team B already did a thing like this
 
 ---
 
-# CSS debt cycle
-we have 12 components that do the same thing and I can write a better one
+Duplication begets more debt
+
+![inline](debtcycle_components.png)
 
 ---
 
-# CSS debt cycle
-deadline, just override to get it done
+Deadlines lead to debt
+
+![inline](debtcycle_deadline.png)
 
 ---
 
-# CSS debt cycle
-design inconsistency
+Design inconsistency leads to debt
+
+![inline](debtcycle_design.png)
 
 ---
 
@@ -183,8 +187,44 @@ design inconsistency
 
 ## Utility classes to the rescue
 
-(flush modifiers)
-"if these classes already exist and are easier to remember, you don't have to write extra CSS"
+![inline](classes_flush.png)
+
+^if these classes already exist and are easier to remember, you don't have to write extra CSS
+
+---
+
+`.row`, `.row-item`, `.row-item--shrink`
+
+![inline](classes_row.png)
+
+---
+
+`.text--caption`, `.text--error`
+
+![inline](classes_text.png)
+
+---
+
+`.align--left .atLarge_align--center`
+
+
+![inline](classes_media.png)
+
+---
+
+# [fit] `.at[Breakpoint]_[property]--[variant]`
+
+---
+
+Breakpoints        | Property       | Variants
+------------------ | -------------- | ---------------------------
+`medium`, `large`  | `align`        | `center`, `right`, `left`
+`medium`, `large`  | `display`      | `none`, `block`, `flex`, `inline`, `inlineBlock`, `inlineFlex`
+`medium`, `large`  | `padding`      | `top`, `right`, `bottom`, `left`, `none`
+`medium`, `large`  | `margin`       | `center`
+`medium`, `large`  | `border`       | `top`, `none`
+`medium`, `large`  | `visibility`   | `a11yHide`, `a11yShow`
+`medium`, `large`  | `width`        | `auto`, `full`
 
 ---
 
@@ -192,7 +232,7 @@ design inconsistency
 
 * small, sharp tools
 * quickly assemble layouts in markup instead of writing styles from scratch
-* apply classes to markup instead of selectors to CSS
+* apply classes to markup instead of adding CSS
 * "style by memory"
 
 ---
@@ -201,10 +241,9 @@ design inconsistency
 
 ---
 
-Core concepts of _Expressive CSS_
+# Core concepts of _Expressive CSS_
 
 * AKA "functional CSS"
-* Classes are for styling. Tags are for semantics.
 * Class names should be understandable at a glance
 * Portability / referential transparency
 * _Spend less time writing CSS_

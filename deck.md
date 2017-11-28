@@ -139,12 +139,7 @@ theme: merriweather, 7
 
 ---
 
-# Code reflecting communication structure
-team A doesn't know that team B already did a thing like this
-
-**communication moves up and down this tree, but not across**
-
-**Find SDS pitch presentation!**
+![inline](conway_example.png)
 
 ---
 
@@ -171,6 +166,7 @@ team A doesn't know that team B already did a thing like this
 
 ## Breaking the cycle
 
+* frame the problem correctly
 * think about the developer experience
 * focus on the decision point at which developers need to add more CSS
 * reduce design fragmentation
@@ -182,6 +178,8 @@ team A doesn't know that team B already did a thing like this
 ![inline](classes_flush.png)
 
 ^if these classes already exist and are easier to remember, you don't have to write extra CSS
+
+^These are "purely presentational"
 
 ---
 
@@ -198,6 +196,11 @@ team A doesn't know that team B already did a thing like this
 ---
 
 # [fit] `.at[Breakpoint]_[property]--[variant]`
+
+---
+
+TODO:
+show examples of media-conditional classes
 
 ---
 
@@ -220,18 +223,13 @@ Breakpoints        | Property       | Variants
 * apply classes to markup instead of adding CSS
 * "style by memory"
 
+^It's not all "paint by classes"; they just provide a good foundation
+
 ---
+
+# Presentational classes are scary
 
 ![inline](article.png)
-
----
-
-# Core concepts of _Expressive CSS_
-
-* AKA "functional CSS"
-* Class names should be understandable at a glance
-* Portability
-* _Spend less time writing CSS_
 
 ---
 
@@ -364,6 +362,63 @@ Just right:
 
 ---
 
+```js, [.highlight: 2-6]
+	"scss": {
+		"transforms": [
+			"attribute/cti",
+			"name/cti/prefixC",
+			"color/optimizedRGBA"
+		],
+		"buildPath": "./dist/",
+		"files": [
+			{
+				"destination": "scss/_colors.scss",
+				"format": "scss/variables"
+			}
+		]
+	}
+```
+
+---
+
+```js, [.highlight: 5]
+	"scss": {
+		"transforms": [
+			"attribute/cti",
+			"name/cti/prefixC",
+			"color/optimizedRGBA"
+		],
+		"buildPath": "./dist/",
+		"files": [
+			{
+				"destination": "scss/_colors.scss",
+				"format": "scss/variables"
+			}
+		]
+	}
+```
+
+---
+
+```js, [.highlight: 10]
+	"scss": {
+		"transforms": [
+			"attribute/cti",
+			"name/cti/prefixC",
+			"color/optimizedRGBA"
+		],
+		"buildPath": "./dist/",
+		"files": [
+			{
+				"destination": "scss/_colors.scss",
+				"format": "scss/variables"
+			}
+		]
+	}
+```
+
+---
+
 ```scss
 $C_textPrimary: rgb(46,62,72);
 $C_textSecondary: rgba(46,62,72,0.6);
@@ -398,8 +453,9 @@ exports.C_TEXT_HINTINVERTED = 'rgba(255,255,255,0.35)';
 # To write less CSS...
 
 * recognize why humans are bad at maintaining CSS
+* make sure designers and engineers speak the same language
 * style with utility classes
-* root your abstractions in what best fosters communication
+* automate documentation from source
 
 ---
 
@@ -423,3 +479,20 @@ exports.C_TEXT_HINTINVERTED = 'rgba(255,255,255,0.35)';
 [medium.com/making-meetup](https://medium.com/making-meetup)
 
 _**@akdetrick**_
+
+^Specifically call out that we do this open source
+
+---
+
+TODO:
+consider using summary to reorder section order
+
+# Core concepts of _Expressive CSS_
+
+* AKA "functional CSS"
+* Class names should be understandable at a glance
+* Portability
+* _Spend less time writing CSS_
+
+^You're moving from a CSS interface for styling to a class based interface for styling
+

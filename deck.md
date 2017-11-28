@@ -178,7 +178,7 @@ theme: merriweather, 7
 ![inline](classes_flush.png)
 
 ^if these classes already exist and are easier to remember, you don't have to write extra CSS
-
+^instead of having these rules burried in your CSS, they are exposed to all with easy to understand classes
 ^These are "purely presentational"
 
 ---

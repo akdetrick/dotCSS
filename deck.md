@@ -8,8 +8,6 @@ theme: merriweather, 7
 
 ![](breaking.jpeg)
 
-^Funny thing about hammers - there are more things you can break with a hammer than you can fix with a hammer
-
 ---
 
 # A hammer, in CSS
@@ -52,8 +50,6 @@ theme: merriweather, 7
 ```
 
 # [fit] :fire: `!important` :fire:
-
-^Clearly, someone was trying to select one specific element, in a specific area, on a specific page, to bludgeon it with styles until it looked correct
 
 ---
 
@@ -127,8 +123,7 @@ theme: merriweather, 7
 ## [fit] !==
 ## [fit] human problems
 
-^We often misidentify a "people problem" as a technical problem, and not all technical problems are best solved with technical solutions
-^If you ignore people problems, you can't fix them
+^As programmers...
 
 ---
 
@@ -189,18 +184,14 @@ theme: merriweather, 7
 
 ---
 
-`.text--caption`, `.text--error`
-
-![inline](classes_text.png)
-
----
 
 # [fit] `.at[Breakpoint]_[property]--[variant]`
 
 ---
 
-# [fit] `.atMedium_display--inlineBlock`
-# [fit] `.atLarge_margin--center`
+* `.atMedium_display--inlineBlock`
+* `.atLarge_margin--center`
+* `.atMedium_align--left`
 
 ---
 
@@ -272,14 +263,6 @@ Breakpoints        | Property       | Variants
 
 # Don't forget to
 # [fit] **WRITE LESS CSS!**
-
----
-
-## Who needs to read `class` attributes?
-
-* __Users?__ Other attributes (`rel`, `role`, `title`, `alt`) are more useful than `class`
-* __Machines?__ Tag choices and microdata (`itemscope`/`itemprop`) are more descriptive than `class`
-* __Developers!__ The `class` attribute is most useful to developers building features
 
 ---
 

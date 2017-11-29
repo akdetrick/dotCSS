@@ -199,8 +199,8 @@ theme: merriweather, 7
 
 ---
 
-TODO:
-show examples of media-conditional classes
+# [fit] `.atMedium_display--inlineBlock`
+# [fit] `.atLarge_margin--center`
 
 ---
 
@@ -481,18 +481,4 @@ exports.C_TEXT_HINTINVERTED = 'rgba(255,255,255,0.35)';
 _**@akdetrick**_
 
 ^Specifically call out that we do this open source
-
----
-
-TODO:
-consider using summary to reorder section order
-
-# Core concepts of _Expressive CSS_
-
-* AKA "functional CSS"
-* Class names should be understandable at a glance
-* Portability
-* _Spend less time writing CSS_
-
-^You're moving from a CSS interface for styling to a class based interface for styling
 
